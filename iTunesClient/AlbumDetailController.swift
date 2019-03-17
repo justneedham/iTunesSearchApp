@@ -11,6 +11,10 @@ import UIKit
 class AlbumDetailController: UITableViewController {
     
     var album: Album?
+
+    lazy var dataSource: AlbumDetailDataSource = {
+        return AlbumDetailDataSource(songs: self.album!.songs)
+    }()
     
     @IBOutlet weak var artworkView: UIImageView!
     @IBOutlet weak var albumTitleLabel: UILabel!
@@ -23,6 +27,8 @@ class AlbumDetailController: UITableViewController {
         if let album = album {
             configure(with: album)
         }
+
+        tableView.dataSource = dataSource
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

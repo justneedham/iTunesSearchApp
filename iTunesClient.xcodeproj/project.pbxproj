@@ -14,7 +14,10 @@
 		BA4CD89F02D3CEA28CE35EE9 /* AlbumListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD688A087E2F6CBCE8303 /* AlbumListController.swift */; };
 		BA4CD8EE6FE6C28360E51B4A /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD1FFDB5ADC0E7C539C94 /* SearchResultsController.swift */; };
 		BA4CDA6E32C0FB6958F7DB16 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD8A86E6E9ECB3C1967A0 /* AlbumDetailViewModel.swift */; };
+		BA4CDAE60740D21F2420D94A /* AlbumDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDFB8580766F281D15D1E /* AlbumDetailDataSource.swift */; };
+		BA4CDC17A6575D60F137DC29 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD320A0FB38D27D59C59E /* SongViewModel.swift */; };
 		BA4CDCA90796F920A3A72836 /* AlbumListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDDD479B094662223B098 /* AlbumListDataSource.swift */; };
+		BA4CDD04F48F5D50211088DC /* SongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDCAFC4287089FCB6792A /* SongCell.swift */; };
 		BA4CDD3527DC90047D91AA7A /* AlbumCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD181AABE944218961907 /* AlbumCellViewModel.swift */; };
 		BE079F3E1E8D66C700006005 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE079F3D1E8D66C700006005 /* AppDelegate.swift */; };
 		BE079F431E8D66C700006005 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE079F411E8D66C700006005 /* Main.storyboard */; };
@@ -31,12 +34,15 @@
 		BA4CD181AABE944218961907 /* AlbumCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCellViewModel.swift; sourceTree = "<group>"; };
 		BA4CD1FFDB5ADC0E7C539C94 /* SearchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		BA4CD31107D4EC398A36C345 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA4CD320A0FB38D27D59C59E /* SongViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
 		BA4CD4C7CF66CC5A0F8A871A /* SearchResultsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsDataSource.swift; sourceTree = "<group>"; };
 		BA4CD688A087E2F6CBCE8303 /* AlbumListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListController.swift; sourceTree = "<group>"; };
 		BA4CD8390F29F39E355219A9 /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		BA4CD8A86E6E9ECB3C1967A0 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		BA4CDB42C3ABF6FC5B846016 /* AlbumDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailController.swift; sourceTree = "<group>"; };
+		BA4CDCAFC4287089FCB6792A /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		BA4CDDD479B094662223B098 /* AlbumListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListDataSource.swift; sourceTree = "<group>"; };
+		BA4CDFB8580766F281D15D1E /* AlbumDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailDataSource.swift; sourceTree = "<group>"; };
 		BE079F3A1E8D66C700006005 /* iTunesClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE079F3D1E8D66C700006005 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE079F421E8D66C700006005 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 			children = (
 				BA4CD4C7CF66CC5A0F8A871A /* SearchResultsDataSource.swift */,
 				BA4CDDD479B094662223B098 /* AlbumListDataSource.swift */,
+				BA4CDFB8580766F281D15D1E /* AlbumDetailDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -75,6 +82,7 @@
 			children = (
 				BA4CD181AABE944218961907 /* AlbumCellViewModel.swift */,
 				BA4CD8A86E6E9ECB3C1967A0 /* AlbumDetailViewModel.swift */,
+				BA4CD320A0FB38D27D59C59E /* SongViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4CD8390F29F39E355219A9 /* AlbumCell.swift */,
+				BA4CDCAFC4287089FCB6792A /* SongCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -231,6 +240,9 @@
 				BA4CDD3527DC90047D91AA7A /* AlbumCellViewModel.swift in Sources */,
 				BA4CD1F02CFDF4F281AC3F60 /* AlbumDetailController.swift in Sources */,
 				BA4CDA6E32C0FB6958F7DB16 /* AlbumDetailViewModel.swift in Sources */,
+				BA4CDAE60740D21F2420D94A /* AlbumDetailDataSource.swift in Sources */,
+				BA4CDD04F48F5D50211088DC /* SongCell.swift in Sources */,
+				BA4CDC17A6575D60F137DC29 /* SongViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
