@@ -35,4 +35,8 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
         cell.textLabel?.text = artist.name
         return cell
     }
+
+    func artist(at indexPath: IndexPath) -> Artist {
+        return data[indexPath.row]
+    }
 }

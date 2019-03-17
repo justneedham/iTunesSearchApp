@@ -1,5 +1,5 @@
 //
-//  SearchResultsController.swift
+//  AlbumListController.swift
 //  iTunesClient
 //
 //  Created by Justin Needham on 2019-03-17.
@@ -8,25 +8,32 @@
 
 import UIKit
 
-class SearchResultsController: UITableViewController {
+class AlbumListController: UITableViewController {
 
-    let searchController = UISearchController(searchResultsController: nil)
-    let dataSource = SearchResultsDataSource()
+    private struct Constants {
+        static let AlbumCellHeight: CGFloat = 80
+    }
+
+    var artist: Artist!
+
+    lazy var dataSource: AlbumListDataSource = {
+        return AlbumListDataSource(albums: self.artist.albums)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SearchResultsController.dismissSearchResultsController))
-        tableView.tableHeaderView = searchController.searchBar
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchResultsUpdater = self
-
+        self.title = artist.name
         tableView.dataSource = dataSource
 
-        definesPresentationContext = true
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    func dismissSearchResultsController() {
-        self.dismiss(animated: true, completion: nil)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Constants.AlbumCellHeight
     }
 
     // MARK: - Table view data source
@@ -39,21 +46,6 @@ class SearchResultsController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "showAlbums" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let artist = dataSource.artist(at: indexPath)
-                artist.albums = Stub.albums
-
-                let albumListController = segue.destination as! AlbumListController
-                albumListController.artist = artist
-            }
-        }
-
-        super.prepare(for: segue, sender: sender)
     }
 
     /*
@@ -111,11 +103,4 @@ class SearchResultsController: UITableViewController {
     }
     */
 
-}
-
-extension SearchResultsController: UISearchResultsUpdating {
-    public func updateSearchResults(for searchController: UISearchController) {
-        dataSource.update(with: [Stub.artist])
-        tableView.reloadData()
-    }
 }
