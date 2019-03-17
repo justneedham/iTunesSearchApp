@@ -1,5 +1,5 @@
 //
-//  AlbumListController.swift
+//  AlbumDetailController.swift
 //  iTunesClient
 //
 //  Created by Justin Needham on 2019-03-17.
@@ -8,22 +8,21 @@
 
 import UIKit
 
-class AlbumListController: UITableViewController {
-
-    private struct Constants {
-        static let AlbumCellHeight: CGFloat = 80
-    }
-
-    var artist: Artist!
-
-    lazy var dataSource: AlbumListDataSource = {
-        return AlbumListDataSource(albums: self.artist.albums)
-    }()
-
+class AlbumDetailController: UITableViewController {
+    
+    var album: Album?
+    
+    @IBOutlet weak var artworkView: UIImageView!
+    @IBOutlet weak var albumTitleLabel: UILabel!
+    @IBOutlet weak var albumGenreLabel: UILabel!
+    @IBOutlet weak var albumReleaseDateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = artist.name
-        tableView.dataSource = dataSource
+
+        if let album = album {
+            configure(with: album)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,22 +30,13 @@ class AlbumListController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    func configure(with album: Album) {
+        let viewModel = AlbumDetailViewModel(album: album)
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showAlbum" {
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                let selectedAlbum = dataSource.album(at: selectedIndexPath)
-                selectedAlbum.songs = Stub.songs
-
-                let albumDetailController = segue.destination as! AlbumDetailController
-                albumDetailController.album = selectedAlbum
-            }
-        }
-        super.prepare(for: segue, sender: sender)
-    }
-
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constants.AlbumCellHeight
+        albumTitleLabel.text = viewModel.title
+        albumGenreLabel.text = viewModel.genre
+        albumReleaseDateLabel.text = viewModel.releaseDate
     }
 
     // MARK: - Table view data source
