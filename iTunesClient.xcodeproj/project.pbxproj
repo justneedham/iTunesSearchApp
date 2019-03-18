@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA4CD1F02CFDF4F281AC3F60 /* AlbumDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDB42C3ABF6FC5B846016 /* AlbumDetailController.swift */; };
+		BA4CD2086B4B61B6983603D3 /* iTuneMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDB4FC3C376EA822B2D89 /* iTuneMedia.swift */; };
+		BA4CD5108371BE5ED414C356 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CDC3E14ADFA6EC266E7F5 /* Endpoint.swift */; };
 		BA4CD5B45B9FC4CB0CC1CE55 /* SearchResultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD4C7CF66CC5A0F8A871A /* SearchResultsDataSource.swift */; };
 		BA4CD62FD189C33263501E52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD31107D4EC398A36C345 /* ViewController.swift */; };
 		BA4CD7B6890834874488D568 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4CD8390F29F39E355219A9 /* AlbumCell.swift */; };
@@ -40,6 +42,8 @@
 		BA4CD8390F29F39E355219A9 /* AlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		BA4CD8A86E6E9ECB3C1967A0 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		BA4CDB42C3ABF6FC5B846016 /* AlbumDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailController.swift; sourceTree = "<group>"; };
+		BA4CDB4FC3C376EA822B2D89 /* iTuneMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTuneMedia.swift; sourceTree = "<group>"; };
+		BA4CDC3E14ADFA6EC266E7F5 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BA4CDCAFC4287089FCB6792A /* SongCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongCell.swift; sourceTree = "<group>"; };
 		BA4CDDD479B094662223B098 /* AlbumListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumListDataSource.swift; sourceTree = "<group>"; };
 		BA4CDFB8580766F281D15D1E /* AlbumDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailDataSource.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		BA4CD9F6AE5CE73CBA5A6FF4 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				BA4CDB4FC3C376EA822B2D89 /* iTuneMedia.swift */,
+				BA4CDC3E14ADFA6EC266E7F5 /* Endpoint.swift */,
+			);
+			name = Endpoint;
+			sourceTree = "<group>";
+		};
 		BE079F311E8D66C700006005 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 				BE079F561E8D682B00006005 /* Album.swift */,
 				BE079F581E8DA2C100006005 /* Song.swift */,
 				BE079F5A1E8DA4CF00006005 /* Stub.swift */,
+				BA4CD9F6AE5CE73CBA5A6FF4 /* Endpoint */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -243,6 +257,8 @@
 				BA4CDAE60740D21F2420D94A /* AlbumDetailDataSource.swift in Sources */,
 				BA4CDD04F48F5D50211088DC /* SongCell.swift in Sources */,
 				BA4CDC17A6575D60F137DC29 /* SongViewModel.swift in Sources */,
+				BA4CD2086B4B61B6983603D3 /* iTuneMedia.swift in Sources */,
+				BA4CD5108371BE5ED414C356 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
