@@ -22,6 +22,26 @@ class Artist {
     }
 }
 
+extension Artist {
+    convenience init?(json: [String: Any]) {
+
+        struct Key {
+            static let artistName = "artistName"
+            static let artistId = "artistId"
+            static let primaryGenreId = "primaryGenreId"
+        }
+
+        guard let artistName = json[Key.artistName] as? String,
+              let artistId = json[Key.artistId] as? Int,
+              let primaryGenreId = json[Key.primaryGenreId] as? Int,
+              let primaryGenreValue = Genre(rawValue: primaryGenreId) else {
+            return nil
+        }
+
+        self.init(id: artistId, name: artistName, primaryGenre: primaryGenreValue, albums: [])
+    }
+}
+
 
 
 
