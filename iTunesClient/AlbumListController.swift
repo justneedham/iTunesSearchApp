@@ -14,15 +14,18 @@ class AlbumListController: UITableViewController {
         static let AlbumCellHeight: CGFloat = 80
     }
 
-    var artist: Artist!
+    var artist: Artist? {
+        didSet {
+            self.title = artist?.name
+            dataSource.update(with: artist!.albums)
+            tableView.reloadData()
+        }
+    }
 
-    lazy var dataSource: AlbumListDataSource = {
-        return AlbumListDataSource(albums: self.artist.albums)
-    }()
+    lazy var dataSource = AlbumListDataSource(albums: [])
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = artist.name
         tableView.dataSource = dataSource
 
         // Uncomment the following line to preserve selection between presentations
