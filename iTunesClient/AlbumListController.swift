@@ -23,6 +23,7 @@ class AlbumListController: UITableViewController {
     }
 
     lazy var dataSource = AlbumListDataSource(albums: [])
+    let client = ItunesAPIClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,11 @@ class AlbumListController: UITableViewController {
         if segue.identifier == "showAlbum" {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 let selectedAlbum = dataSource.album(at: selectedIndexPath)
-                selectedAlbum.songs = Stub.songs
-
                 let albumDetailController = segue.destination as! AlbumDetailController
-                albumDetailController.album = selectedAlbum
+
+                client.lookupAlbum(withId: selectedAlbum.id) { album, error in
+                    albumDetailController.album = album
+                }
             }
         }
         super.prepare(for: segue, sender: sender)

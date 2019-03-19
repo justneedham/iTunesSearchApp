@@ -41,9 +41,7 @@ class JSONDownloader {
             } else {
                 completion(nil, .responseUnsuccessful)
             }
-
         }
-
         return task
     }
 }
