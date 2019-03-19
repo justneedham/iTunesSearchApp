@@ -32,5 +32,9 @@ class AlbumCell: UITableViewCell {
         albumTitleLabel.text = viewModel.title
         genreLabel.text = viewModel.genre
         releaseDateLabel.text = viewModel.releaseDate
+
+        if let artwork = viewModel.artwork {
+            artworkView.image = artwork
+        }
     }
 }
