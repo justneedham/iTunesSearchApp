@@ -16,7 +16,7 @@ class SearchResultsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SearchResultsController.dismissSearchResultsController))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(SearchResultsController.dismissSearchResultsController))
         tableView.tableHeaderView = searchController.searchBar
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
@@ -55,7 +55,6 @@ class SearchResultsController: UITableViewController {
                 }
             }
         }
-
         super.prepare(for: segue, sender: sender)
     }
 }

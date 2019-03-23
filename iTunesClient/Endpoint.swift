@@ -38,7 +38,7 @@ extension iTunes: Endpoint {
     var path: String {
         switch self {
         case .search: return "/search"
-        case.lookup: return "/lookup"
+        case .lookup: return "/lookup"
         }
     }
 
